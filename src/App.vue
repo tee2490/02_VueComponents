@@ -20,7 +20,9 @@
       </button>
       <br />
       <br />
-      <component :is="currentComponent" />
+      <keep-alive :include="['LuckyNumber', 'LuckyNumberV2']">
+        <component :is="currentComponent" />
+      </keep-alive>
     </div>
   </div>
 </template>
