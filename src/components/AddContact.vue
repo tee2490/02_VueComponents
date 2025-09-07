@@ -38,17 +38,16 @@
 </template>
 
 <script setup>
-import { reactive, defineEmits } from "vue";
+import { reactive, defineProps } from "vue";
 
-const emit = defineEmits(["add-contact"]);
 const contact = reactive({
   name: "",
   phone: "",
   email: "",
 });
-
+const props = defineProps({ onAddContact: Function });
 function addContact() {
-  emit("add-contact", {
+  props.onAddContact({
     name: contact.name,
     phone: contact.phone,
     email: contact.email,
