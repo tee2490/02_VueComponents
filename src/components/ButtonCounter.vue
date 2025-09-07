@@ -1,13 +1,34 @@
 <template>
-  <button @click="count++">Clicked {{ count }} times</button>
+  <button @click="count++">U Clicked {{ count }} times</button>
 </template>
-<script>
-import { ref } from "vue";
+<script setup>
+import {
+  ref,
+  onBeforeMount,
+  onMounted,
+  onBeforeUpdate,
+  onUpdated,
+  onBeforeUnmount,
+  onUnmounted,
+} from "vue";
 
-export default {
-  setup() {
-    const count = ref(0);
-    return { count };
-  },
-};
+onBeforeMount(() => {
+  console.log("onBeforeMount - ButtonCounter.vue");
+});
+onMounted(() => {
+  console.log("onMounted- ButtonCounter.vue");
+});
+onBeforeUpdate(() => {
+  console.log("onBeforeUpdate- ButtonCounter.vue");
+});
+onUpdated(() => {
+  console.log("onUpdated- ButtonCounter.vue");
+});
+onBeforeUnmount(() => {
+  console.log("onBeforeUnmount- ButtonCounter.vue");
+});
+onUnmounted(() => {
+  console.log("onUnmounted- ButtonCounter.vue");
+});
+const count = ref(0);
 </script>
