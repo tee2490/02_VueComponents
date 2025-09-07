@@ -3,7 +3,7 @@
     <div>{{ message }}</div>
     <Contact
       name="Bhrugen"
-      phone="123123123"
+      :phone="123123123"
       :ownername="contactsOwner"
     ></Contact>
   </div>
