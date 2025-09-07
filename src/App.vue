@@ -10,7 +10,7 @@
           :ownername="contact.ownerName"
           :email="contact.email"
           :isFavorite="contact.isFavorite"
-          @update-favorite="contact.isFavorite = !contact.isFavorite"
+          @update-favorite="contact.isFavorite = onUpateFavorite($event)"
         ></Contact>
       </div>
     </div>
@@ -43,6 +43,10 @@ const contacts = reactive([
     isFavorite: false,
   },
 ]);
+
+function onUpateFavorite(isFavoriteFromChildComponent) {
+  return !isFavoriteFromChildComponent;
+}
 </script>
 
 <style></style>
