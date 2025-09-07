@@ -1,10 +1,12 @@
 <template>
   <div class="container">
     <div>{{ message }}</div>
+    <Contact name="Ben" :phone="123123123" :ownername="contactsOwner"></Contact>
     <Contact
-      name="Bhrugen"
-      :phone="123123123"
+      name="Jessica"
+      :phone="4343453"
       :ownername="contactsOwner"
+      email="jessica@fakeemail.com"
     ></Contact>
   </div>
 </template>
