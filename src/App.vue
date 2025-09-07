@@ -5,7 +5,7 @@
         Contact Owner Name : <input v-model="ownerName" />
       </div>
       <br /><br />
-      <AddContact></AddContact>
+      <AddContact @add-contact="onAddContact"></AddContact>
       <div class="row">
         <div class="col-12" v-for="contact in contacts" :key="contact.name">
           <Contact
@@ -50,6 +50,12 @@ const contacts = reactive([
     isFavorite: false,
   },
 ]);
+
+function onAddContact(contact) {
+  contact.ownerName = ownerName.value;
+  contact.isFavorite = false;
+  contacts.push(contact);
+}
 
 function onUpdateFavorite(oldValuesFromChildComponent, phoneNumberFromParent) {
   console.log(oldValuesFromChildComponent);
