@@ -1,16 +1,15 @@
 <template>
   <div>{{ message }}</div>
-  <contact-us></contact-us>
-  <button-counter></button-counter>
+  <ContactUs></ContactUs>
+  <!--local component-->
+  <ButtonCounter></ButtonCounter>
+  <ButtonCounter></ButtonCounter>
 </template>
 
-<script>
-export default {
-  setup() {
-    const message = "Hello Vue";
-    return { message };
-  },
-};
+<script setup>
+import ContactUs from "./components/ContactUs.vue";
+import ButtonCounter from "./components/ButtonCounter.vue";
+const message = "Hello Vue";
 </script>
 
 <style></style>
